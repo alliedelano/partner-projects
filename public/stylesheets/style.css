@@ -1,20 +1,15 @@
-.brand-logo {
-  margin-left: 15px;
+#nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-.card .card-content .card-title {
-  margin-bottom: 10px;
+#efl-logo {
+  background-color:aqua;
 }
 
-#search-row form {
-  padding-top: 20px;
-}
-
-.student-name {
-  position: relative;
-  top: -5px;
-}
-
-.collection-item form {
-  margin-top: -5px;
+#dashboard {
+  background-color: pink;
+  height: 40vh;
+  width: auto;
 }
