@@ -1,15 +1,92 @@
+html {
+  font-family: 'Raleway', sans-serif;
+}
+
 #nav-bar {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto 25px auto 25px;
 }
 
-#efl-logo {
-  background-color:aqua;
+img {
+  height: 75px;
+  margin-left: 10px;
+}
+
+#header-menu-items {
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+  justify-content: space-around;
+  color: #152943
+}
+
+#header-menu-items :hover {
+  color: #4CBED3;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#header-menu-items * {
+  margin: auto 15px auto 15px;
+}
+
+#login-out * {
+  display: flex;
+  color: white;
+  width: 120px;
+  height: 35px;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#login-out :hover {
+  background-color: #CFB1FF
+}
+
+#login {
+  background-color: #BF2885;
+}
+
+#logout {
+  background-color: #4CBED3;
+}
+
+#header-line {
+  background-color: #DFE0E2;
+  height: 1vh;
+  width: auto;
+  margin: 1vh auto 2vh auto
 }
 
 #dashboard {
   background-color: pink;
   height: 40vh;
   width: auto;
+}
+
+#new-entry-form {
+  background-color: lightskyblue;
+  height: 30vh;
+  width: 50vw;
+}
+
+#comment-form {
+  background-color: lightgoldenrodyellow;
+  height: 30vh;
+  width: 50vw;
+}
+
+body {
+  text-align: center;
+}
+
+
+#footer-line {
+  background-color: #DFE0E2;
+  height: 2vh;
+  width: auto;
+  margin-top: 15vh;
 }

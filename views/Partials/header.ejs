@@ -6,18 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EFL Partners & Projects</title>
     <link rel="stylesheet" href="stylesheets/style.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+    </style>
 </head>
 <nav id="nav-bar">
-    <div id="efl-logo">EFL LOGO</div>
-    <h2>Dashboard</h2>
-    <h2>Partners</h2>
-    <h2>Projects</h2>
-    <h2>
-        <% if (user) { %>
-            <a href="/logout">Log Out</a>
-        <% } else { %> 
-            <a href="/auth/google">Log In</a>
-        <% } %>
-    </h2>
+    <div id="logo">
+        <img src="images/edgeLogo.png" alt="edge logo">
+    </div>
+    <div id="header-menu-items">
+        <h2>Dashboard</h2>
+        <h2>Partners</h2>
+        <h2>Projects</h2>
+    </div>
+    <div id="login-out">
+        <h2>
+            <% if (user) { %>
+                <a href="/logout" id="logout">Log Out</a>
+            <% } else { %> 
+                <a href="/auth/google" id="login">Log In</a>
+            <% } %>
+        </h2>
+    </div>
 </nav>
-<div id="line"></div>
+<div id="header-line"></div>
+<body>
