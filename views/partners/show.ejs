@@ -1,7 +1,19 @@
 <%- include('../partials/header') %>
 
    <h1>Partner Show Page</h1> 
-
+   <section id="show-page-partners">
+      <div>Organization Name: <%=partner.orgName%> </div>
+      <div>Website: <%=partner.website%> </div>
+      <div>Description: <%=partner.description%></div>
+      <div>Location: <%=partner.location%> </div>
+      <div>Partner Type: <%=partner.type%> </div>
+      <div>Partnership Status: <%=partner.status%> </div>
+      <div>Primary Contact Name: <%=partner.contactName%> </div>
+      <div>Contact Email: <%=partner.contactEmail%> </div>
+      <div>Entered By: <%=partner.enteredBy%> </div>
+   </section>
+   <br>
+   <br>
    <div id="comment-form">Comment Form</div>
 
 <%- include('../partials/footer') %>

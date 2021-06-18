@@ -20,10 +20,14 @@ img {
   flex-direction: row;
   width: 60vw;
   justify-content: space-around;
-  color: #152943
 }
 
-#header-menu-items :hover {
+a {
+  text-decoration: none;
+  color: #152943;
+}
+
+a:hover {
   color: #4CBED3;
   cursor: pointer;
   text-decoration: underline;

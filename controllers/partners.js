@@ -1,8 +1,10 @@
 const Partner = require('../models/partner');
+const user = require('../models/user');
 const User = require('../models/user')
 
 module.exports = {
     index,
+    show,
     create
 };
 
@@ -13,6 +15,21 @@ function index(req, res){
             title: 'All Partners',
             partners
         })
+    })
+}
+
+function show (req, res){
+    Partner.findById(req.params.id, function (err, partner){
+        User.find(
+            {enteredBy: user.id},
+            function(err, users){
+                res.render('partners/show', {
+                    title: 'Partner Detail',
+                    partner: partner,
+                    users: users
+                })
+            }
+        )
     })
 }
 
