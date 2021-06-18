@@ -5,7 +5,8 @@ const User = require('../models/user')
 module.exports = {
     index,
     show,
-    create
+    create,
+    edit
 };
 
 
@@ -41,6 +42,18 @@ function create(req, res){
             res.redirect ('/partners');
         })
     })
+}
+
+function edit(req, res){
+    Partner.findById(req.params.id, function(err, partner){
+        if(err){
+            res.send(err);
+        } else {
+            res.render('edit.ejs', {
+                partner: partner
+            })
+        }
+    });
 }
 
 

@@ -12,6 +12,9 @@
       <div>Entered By: <%=partner.enteredBy%></div>
    </section>
    <br>
+   <section>
+      <a href="/partners/<%=partner.id%>/edit">Edit Partner</a>
+   </section>
    <br>
    <% if (partner.comments.length) { %>
       <table>
