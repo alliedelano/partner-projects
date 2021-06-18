@@ -67,10 +67,34 @@ img {
   width: auto;
 }
 
-#new-entry-form {
+table {
+  font-size: 15px;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;
+  vertical-align: center;
+}
+
+tr:hover {
+  background-color: #DFE0E2
+}
+
+#new-entry-partner {
   background-color: lightskyblue;
-  height: 30vh;
-  width: 50vw;
+  width: auto;
+}
+
+#add-partner-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#submit-form {
+  height: 20px;
+  width: 100px;
+  align-self: center;
 }
 
 #comment-form {

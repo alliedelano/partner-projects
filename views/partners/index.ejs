@@ -1,7 +1,63 @@
-<%- include('./partials/header') %>
+<%- include('../partials/header') %>
 
-   <h1>Partners Index Page</h1> 
+   <h1>Edge Future Learning Partner Organizations</h1> 
+   <table id="partner-list">
+       <thead>
+           <th>Organization Name</th>
+           <th>Partner Type</th>
+           <th>Partnership Status</th>
+       </thead>
+       <tbody>
+           <% partners.forEach(p => { %>
+            <tr>
+                <td><a href='partners/<%=p.id%>'><%= p.orgName %></a></td>
+                <td><%= p.type %></td>
+                <td><%= p.status %></td>
+            </tr>
+           <% }) %>
+       </tbody>
+   </table>
+   <br><br><br>
 
-   <div id="new-entry-form"></div>
+   <div id="new-entry-partner">
+       <form id="add-partner-form" action="/partners" method="POST">
+           <label>Organization Name:
+               <input type="text" name="orgName">
+            </label>
+           <label>Website:
+                <input type="text" name="website">
+           </label>
+           <label>Description:
+                <input type="text" name="description">
+           </label>
+           <label>Location:
+                <input type="text" name="location">
+           </label>
+           <label>Partner Type:
+                <select name="type">
+                    <option value="Peer">Peer</option>
+                    <option value="Collaborator/Contributor">Collaborator/Contributor</option>
+                    <option value="Customer">Customer</option>
+                    <option value="Technology">Technology</option>
+                </select>
+           </label>
+           <label>Partnership Status:
+                <select name="status">
+                    <option value="Wider Contact">Wider Contact</option>
+                    <option value="Exploring Relationship">Exploring Relationship</option>
+                    <option value="Working Together">Working Together</option>
+                    <option value="EFL Partner">EFL Partner</option>
+                    <option value="EFL Leader">EFL Leader</option>
+                </select>
+           </label>
+           <label>Primary Contact Name:
+                <input type="text" name="contactName">
+           </label>
+           <label>Primary Contact Email:
+                <input type="text" name="contactEmail">
+           </label>
+           <button id="submit-form" type="submit">Add Partner</button>
+       </form>
+   </div>
 
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>
