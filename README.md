@@ -1,12 +1,5 @@
 # App title
-
 Some text about this app. 
-
-## Screenshot(s) 
-
-1. Clone the repo
-2. Rename the folder to your Project
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
 
 ## Technologies Used
 A list of technologies used
