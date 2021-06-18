@@ -1,6 +1,8 @@
 # App title
 Some text about this app. 
 
+## Screenshots
+
 ## Technologies Used
 A list of technologies used
 
