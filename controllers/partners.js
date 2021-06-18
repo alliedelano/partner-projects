@@ -6,9 +6,19 @@ module.exports = {
     index,
     show,
     create,
-    edit
+    edit,
+    update,
+    delete: deletePartner
 };
 
+async function update(req, res){
+    try {
+        const updatedPartner = await Partner.findByIdAndUpdate(req.params.id, req.body, {new: true});
+        res.redirect(`/partners/${req.params.id}`)
+    } catch (err) {
+        res.send(err)
+    }
+}
 
 function index(req, res){
     Partner.find({}, function(err, partners) {
@@ -49,11 +59,17 @@ function edit(req, res){
         if(err){
             res.send(err);
         } else {
-            res.render('edit.ejs', {
+            res.render('partners/edit', {
                 partner: partner
             })
         }
     });
+}
+
+function deletePartner(req, res){
+    Partner.findByIdAndRemove(req.params.id, (err, deletePartner) => {
+        res.redirect('/partners')
+    })
 }
 
 

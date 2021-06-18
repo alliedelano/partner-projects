@@ -42,10 +42,19 @@
    
    <div id="partner-comment-form">
       <form id="add-partner-comment" method="POST" action="/partners/<%=partner._id%>/comments">
-         <textarea name="text"></textarea>
+         <textarea name="text"></textarea><br>
          <button id="add-comment" type="submit">Add Comment</button>
       </form>
    </div>
+   <br>
+
+   <section id="delete">
+      <form action="/partners/<%=partner.id%>/?_method=DELETE" class="delete-form" method="POST">
+          <button type="submit">Delete Partner</button><br>
+          <label>Warning: This action cannot be undone.</label>
+      </form>
+
+  </section>
 
 
 <%- include('../partials/footer') %>

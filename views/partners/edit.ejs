@@ -1,9 +1,43 @@
 <%- include('../partials/header') %>
 
-
-
-
-
+    <form action="/partners/<%=partner.id%>?_method=PUT" method="POST">
+        <label>Organization Name:
+            <input type="text" name="orgName" value="<%=partner.orgName%>">
+         </label>
+        <label>Website:
+             <input type="text" name="website" value="<%=partner.website%>">
+        </label>
+        <label>Description:
+             <input type="text" name="description" value="<%=partner.description%>">
+        </label>
+        <label>Location:
+             <input type="text" name="location" value="<%=partner.location%>">
+        </label>
+        <label>Partner Type:
+             <select name="type" value="<%=partner.type%>">
+                 <option value="Peer">Peer</option>
+                 <option value="Collaborator/Contributor">Collaborator/Contributor</option>
+                 <option value="Customer">Customer</option>
+                 <option value="Technology">Technology</option>
+             </select>
+        </label>
+        <label>Partnership Status:
+             <select name="status" value="<%=partner.status%>">
+                 <option value="Wider Contact">Wider Contact</option>
+                 <option value="Exploring Relationship">Exploring Relationship</option>
+                 <option value="Working Together">Working Together</option>
+                 <option value="EFL Partner">EFL Partner</option>
+                 <option value="EFL Leader">EFL Leader</option>
+             </select>
+        </label>
+        <label>Primary Contact Name:
+             <input type="text" name="contactName" value="<%=partner.contactName%> ">
+        </label>
+        <label>Primary Contact Email:
+             <input type="text" name="contactEmail" value="<%=partner.contactEmail%> ">
+        </label>
+        <button id="submit-form" type="submit">Update Partner</button>
+    </form>
 
 
 
