@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const partnerCommentSchema = new Schema({
-    text: String
+    text: String,
+    enteredBy: [{type: Schema.Types.ObjectId, ref: 'User'}],
 }, {
     timestamps: true
 });

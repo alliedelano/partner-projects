@@ -1,8 +1,7 @@
 <%- include('../partials/header') %>
-
-   <h1>Partner Show Page</h1> 
+ 
    <section id="show-page-partners">
-      <div>Organization Name: <%=partner.orgName%> </div>
+      <h1><%=partner.orgName%></h1>
       <div>Website: <%=partner.website%> </div>
       <div>Description: <%=partner.description%></div>
       <div>Location: <%=partner.location%> </div>
@@ -10,10 +9,40 @@
       <div>Partnership Status: <%=partner.status%> </div>
       <div>Primary Contact Name: <%=partner.contactName%> </div>
       <div>Contact Email: <%=partner.contactEmail%> </div>
-      <div>Entered By: <%=partner.enteredBy%> </div>
+      <div>Entered By: <%=partner.enteredBy%></div>
    </section>
    <br>
    <br>
-   <div id="comment-form">Comment Form</div>
+   <% if (partner.comments.length) { %>
+      <table>
+         <thead>
+            <tr>
+               <th>Timestamp</th>
+               <th>Team Member</th>
+               <th>Comment</th>
+            </tr>
+         </thead>
+         <tbody>
+            <% partner.comments.forEach(c => { %>
+             <tr>
+                <td><%=c.createdAt.toLocaleDateString()%></td>
+                <td><%=c.enteredBy%> </td>
+                <td><%=c.text%> </td>
+             </tr>
+            <% }) %> 
+         </tbody>
+      </table>
+
+   <% } else { %> 
+      <h5>No comments yet. Please add below.</h5>
+   <% } %>
+   
+   <div id="partner-comment-form">
+      <form id="add-partner-comment" method="POST" action="/partners/<%=partner._id%>/comments">
+         <textarea name="text"></textarea>
+         <button id="add-comment" type="submit">Add Comment</button>
+      </form>
+   </div>
+
 
 <%- include('../partials/footer') %>

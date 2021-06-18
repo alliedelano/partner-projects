@@ -21,7 +21,8 @@ require('./config/passport');
 const indexRouter = require('./routes/index');
 const dashboardRouter = require('./routes/dashboard');
 const partnersRouter = require('./routes/partners');
-const projectsRouter = require('./routes/projects')
+const projectsRouter = require('./routes/projects');
+const partnerCommentsRouter = require('./routes/partnerComments')
 
 
 // view engine setup
@@ -57,6 +58,7 @@ app.use('/', indexRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/partners', partnersRouter);
 app.use('/projects', projectsRouter);
+app.use('/', partnerCommentsRouter);
 
 
 // invalid request, send 404 page
