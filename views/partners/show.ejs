@@ -31,7 +31,12 @@
                 <td><%=c.createdAt.toLocaleDateString()%></td>
                 <td><%=c.enteredBy%> </td>
                 <td><%=c.text%> </td>
-                <td>delete</td>
+                <td><a href="/partners/<%=partner.id%>/comments/<%=c._id%>/edit">edit</a></td>
+                <td>
+                   <form action="/partners/<%=partner.id%>/comments/<%=c._id%>?_method=DELETE" method="POST">
+                     <button type="submit">Delete</button>
+                   </form>
+                </td>
              </tr>
             <% }) %> 
          </tbody>
