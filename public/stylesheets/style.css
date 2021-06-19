@@ -105,12 +105,13 @@ tr:hover {
   background-color: lightgoldenrodyellow;
   height: 30vh;
   width: 50vw;
+  align-content: center;
+  justify-content: center;
 }
 
 body {
   text-align: center;
 }
-
 
 #footer-line {
   background-color: #DFE0E2;
