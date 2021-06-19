@@ -9,7 +9,6 @@
       <div>Partnership Status: <%=partner.status%> </div>
       <div>Primary Contact Name: <%=partner.contactName%> </div>
       <div>Contact Email: <%=partner.contactEmail%> </div>
-      <div>Entered By: <%=partner.enteredBy%></div>
    </section>
    <br>
    <section>
@@ -29,9 +28,8 @@
             <% partner.comments.forEach(c => { %>
              <tr>
                 <td><%=c.createdAt.toLocaleDateString()%></td>
-                <td><%=c.enteredBy%> </td>
+                <td><%=c.userName%> </td>
                 <td><%=c.text%> </td>
-                <td><a href="/partners/<%=partner.id%>/comments/<%=c._id%>/edit">edit</a></td>
                 <td>
                    <form action="/partners/<%=partner.id%>/comments/<%=c._id%>?_method=DELETE" method="POST">
                      <button type="submit">Delete</button>
@@ -55,6 +53,8 @@
    <br>
    <br>
 
+   <div>Record Created By: <%=partner.userName%> on <%= partner.createdAt.toLocaleDateString()%> </div>
+   <br>
    <section id="delete">
       <form action="/partners/<%=partner.id%>/?_method=DELETE" class="delete-form" method="POST">
           <button type="submit">Delete Partner</button><br>

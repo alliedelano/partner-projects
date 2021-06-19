@@ -32,7 +32,7 @@ function index(req, res){
 function show (req, res){
     Partner.findById(req.params.id, function (err, partner){
         User.find(
-            {enteredBy: user.id},
+            {enteredBy: user.name},
             function(err, users){
                 res.render('partners/show', {
                     title: 'Partner Detail',
@@ -46,7 +46,8 @@ function show (req, res){
 
 function create(req, res){
     User.find({}, function(err, users){
-        req.body.enteredBy = req.user;
+        req.body.userId = req.user._id;
+        req.body.userName = req.user.name;
         const partner = new Partner(req.body, users);
         partner.save(function(err){
             res.redirect ('/partners');

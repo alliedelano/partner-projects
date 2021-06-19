@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 const partnerCommentSchema = new Schema({
     text: String,
-    enteredBy: [{type: Schema.Types.ObjectId, ref: 'User'}],
+    userId: [{type: Schema.Types.ObjectId, ref: 'User'}],
+    userName: {
+        type: String
+    }
 }, {
     timestamps: true
 });
@@ -41,7 +44,10 @@ const partnerSchema = new Schema({
     },
     leadTeamMember: [{type: Schema.Types.ObjectId, ref: 'User'}],
     comments: [partnerCommentSchema],
-    enteredBy: [{type: Schema.Types.ObjectId, ref: 'User'}],
+    userId: [{type: Schema.Types.ObjectId, ref: 'User'}],
+    userName: {
+        type: String
+    }
 }, {
     timestamps: true
 });

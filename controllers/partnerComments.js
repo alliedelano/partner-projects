@@ -1,3 +1,4 @@
+const partner = require('../models/partner');
 const Partner = require('../models/partner');
 
 module.exports = {
@@ -7,12 +8,16 @@ module.exports = {
     delete: deleteComment
 }
 
+// function update(req, res) {
+//     console.log("i updated")
+// }
+
 // function edit(req, res) {
 //     Partner.findOne({'comments._id': req.params.id}, function(err, partner){
 //         if(err){
 //             res.send(err);
 //         } else {
-//             res.render(`/partners/${partner._id}/comments/${req.params.id}/edit`)
+//             res.render(`/partners/${partner._id}/comments/${comment._id}/edit`)
 //         }
 //     })
 // }
@@ -31,18 +36,11 @@ function deleteComment(req, res){
 
 function create(req, res) {
     Partner.findById(req.params.id, function(err, partner){
-        req.body.enteredBy = req.user
+        req.body.userId = req.user._id;
+        req.body.userName = req.user.name;
         partner.comments.push(req.body);
         partner.save(function(err){
-            res.redirect(`/partners/${partner._id}`);
+        res.redirect(`/partners/${partner._id}`);
         })
     })
 }
-
-// function deleteComment(req, res){
-//     Partner.findById(req.params.id, function(err, partner){
-//         partner.comments.find(function(comment){
-//             if (comment.id === req.params.comment_id)
-//         })
-//     })
-// }
