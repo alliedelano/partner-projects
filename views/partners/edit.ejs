@@ -1,9 +1,10 @@
 <%- include('../partials/header') %>
 
-    <form action="/partners/<%=partner.id%>?_method=PUT" method="POST">
+    <h1>Edit Partner Information</h1>
+    <form id="edit-partner-form" action="/partners/<%=partner.id%>?_method=PUT" method="POST">
         <label>Organization Name:
             <input type="text" name="orgName" value="<%=partner.orgName%>">
-         </label>
+        </label>
         <label>Website:
              <input type="text" name="website" value="<%=partner.website%>">
         </label>
@@ -36,9 +37,8 @@
         <label>Primary Contact Email:
              <input type="text" name="contactEmail" value="<%=partner.contactEmail%> ">
         </label>
-        <button id="submit-form" type="submit">Update Partner</button>
+        <button id="submit-form" type="submit">Update</button>
     </form>
-
 
 
 <%- include('../partials/footer') %>
