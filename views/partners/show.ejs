@@ -34,7 +34,7 @@
                 <td><%=c.text%> </td>
                 <td><%=c.userId%> </td>
                 <td><%=user._id%> </td>
-                <% if (c.userId == user._id) { %>
+                <% if (c.userId != user._id) { %>
                    <td>
                      <form action="/partners/<%=partner.id%>/comments/<%=c._id%>?_method=DELETE" method="POST">
                         <button type="submit">Delete</button>
@@ -60,7 +60,7 @@
    <br>
    <br>
 
-   <div>Record Created By: <%=partner.userName%> on <%= partner.createdAt.toLocaleDateString()%> </div>
+   <div>Record Created By: <%=partner.userName%> on PUT DATE BACK IN HERE ONCE TIMESTAMPS WORKING AGAIN</div>
    <section id="delete">
       <form action="/partners/<%=partner.id%>/?_method=DELETE" class="delete-form" method="POST">
           <button id="delete-partner" type="submit">Delete Partner</button><br>

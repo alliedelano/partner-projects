@@ -1,7 +1,76 @@
 <%- include('../partials/header') %>
 
-   <h1>Projects Index Page</h1> 
+   <h1>Edge Future Learning Projects</h1>
+   <table id="project-list">
+      <thead>
+         <th>Project Name</th>
+         <th>Project Type</th>
+         <th>In Partnership With</th>
+         <th>Starts/Ends</th>
+         <th>Size</th>
+      </thead>
+      <tbody>
+         <% projects.forEach(p => { %>
+            <tr>
+               <td><%=p.projectName%></td>
+               <td><%=p.type%></td>
+               <td>Make this partner name</td>
+               <td><%=p.startDate, p.endDate%></td>
+               <td><%=p.size%></td>
+            </tr>
+         <% }) %> 
+      </tbody>
+   </table>
+   <br><br><br>
 
-   <div id="new-entry-form">New Entry Form</div>
+   <div id="new-entry-project">
+      <h3>Add New Project</h3>
+      <form id="add-project-form" action="/projects" method="POST">
+         <label>Project Name:
+            <input type="text" name="projectName">
+         </label>
+         <label>Type:
+            <select name="type">
+               <option value="Blog">Blog</option>
+               <option value="Case Study">Case Study</option>
+               <option value="Webinar">Webinar</option>
+               <option value="Training">Training</option>
+               <option value="Tool/Resource">Tool/Resource</option>
+               <option value="Maseter Class">Master Class</option>
+               <option value="Online Course">Online Course</option>
+               <option value="Co-Developed Training">Co-Developed Training</option>
+               <option value="On-Site Visit">On-Site Visit</option>
+               <option value="Other">Other (please describe)</option>
+            </select>
+         </label>
+         <label>Description:
+            <input type="text" name="description">
+         </label>
+         <label>Size:
+            <select name="size">
+               <option value="xs">Extra Small</option>
+               <option value="s">Small</option>
+               <option value="m">Medium</option>
+               <option value="l">Large</option>
+               <option value="xl">Extra Large</option>
+         </label>
+         <label>Start Date:
+            <input type="datetime-local" name="startDate">
+         </label>
+         <label>End Date:
+            <input type="datetime-local" name="endDate">
+         </label>
+         <label>Partner</label>
+         <label>Team Members</label>
+         <label>Contract Necessary:
+            <input type="checkbox" name="contractNecessary">
+         </label>
+         <label>Contract in Place:
+            <input type="checkbox" name="contractInPlace">
+         </label>
+         <button id="submit-form" type="submit">Add Project</button>
+      </form>
+   </div>
+
 
 <%- include('../partials/footer') %>

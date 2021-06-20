@@ -1,6 +1,6 @@
 const Partner = require('../models/partner');
 const user = require('../models/user');
-const User = require('../models/user')
+const User = require('../models/user');
 
 module.exports = {
     index,
