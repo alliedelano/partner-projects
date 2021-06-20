@@ -5,12 +5,12 @@ This application is a simple tracking tool for partnership leads and projects.
 (TO BE ADDED LATER)
 
 ## Technologies Used
--HTML/CSS/Javascript
--Express.js
--Node
--OAuth using Passport
--Mongoose
--MongoDB Atlas
+*HTML/CSS/Javascript
+*Express.js
+*Node
+*OAuth using Passport
+*Mongoose
+*MongoDB Atlas
 
 ## Getting Started
 Include a link to the deployed app and your Trello board with the project's planning.
