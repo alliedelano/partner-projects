@@ -9,6 +9,7 @@
       <div>Partnership Status: <%=partner.status%> </div>
       <div>Primary Contact Name: <%=partner.contactName%> </div>
       <div>Contact Email: <%=partner.contactEmail%> </div>
+      <div>Lead Team Member: <%=partner.leadTeamMember%> </div>
    </section>
    <br>
    <section>
@@ -61,7 +62,7 @@
    <br>
    <br>
 
-   <div>Record Created By: <%=partner.userName%> on PUT DATE BACK IN HERE ONCE TIMESTAMPS WORKING AGAIN</div>
+   <div>Record Created By: <%=partner.userName%></div>
    <section id="delete">
       <form action="/partners/<%=partner.id%>/?_method=DELETE" class="delete-form" method="POST">
           <button id="delete-partner" type="submit">Delete Partner</button><br>

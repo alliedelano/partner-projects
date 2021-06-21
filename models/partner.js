@@ -42,7 +42,10 @@ const partnerSchema = new Schema({
         type: String,
         required: true
     },
-    leadTeamMember: [{type: Schema.Types.ObjectId, ref: 'User'}],
+    leadTeamMember: {
+        type: String,
+        enum: ['Cherakee', 'Helen', 'Laura', 'Olly']
+    },
     comments: [partnerCommentSchema],
     userId: {type: Schema.Types.ObjectId, ref: 'User'},
     userName: {
