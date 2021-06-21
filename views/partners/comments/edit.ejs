@@ -1,6 +1,6 @@
 <h1> Insert partial header</h1>
 
-<form action="/partners/<%=partner.id%>/comments/<%=commentSubdoc.id%>?_method=PUT" method="POST">
+<form action="/partners/<%=partner._id%>/comments/<%=commentSubdoc._id%>?_method=PUT" method="POST">
     <input name="text" value="<%=commentSubdoc.text%>">
     <button type="submit">Update Comment</button>
 </form>
