@@ -3,24 +3,24 @@ const Partner = require('../models/partner');
 
 module.exports = {
     create,
-    //edit,
-    //update,
+    edit,
+    update,
     delete: deleteComment
 }
 
-// function update(req, res) {
-//     console.log("i updated")
-// }
+function update(req, res) {
+    console.log("i updated")
+}
 
-// function edit(req, res) {
-//     Partner.findOne({'comments._id': req.params.id}, function(err, partner){
-//         if(err){
-//             res.send(err);
-//         } else {
-//             res.render(`/partners/${partner._id}/comments/${comment._id}/edit`)
-//         }
-//     })
-// }
+function edit(req, res) {
+    Partner.findOne({'comments._id': req.params.id}, function(err, partner){
+        if(err){
+            res.send(err);
+        } else {
+            res.render(`/partners/${partner._id}/comments/${req.params.id}/edit`)
+        }
+    })
+}
 
 function deleteComment(req, res){
     Partner.findOne({'comments._id': req.params.id}, function(err, partner){

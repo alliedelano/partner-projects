@@ -104,6 +104,11 @@ tr:hover {
   margin: 2px auto 2px auto;
 }
 
+#edit-comment-button {
+  background-color: yellow;
+  border: solid 1px black;
+}
+
 #submit-form, #add-comment, #delete-partner {
   margin: 15px auto 15px auto;
   height: 30px;

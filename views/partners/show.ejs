@@ -22,8 +22,6 @@
                <th>Timestamp</th>
                <th>Team Member</th>
                <th>Comment</th>
-               <th> REMOVE ME c.userId</th>
-               <th> REMOVE ME user._id</th>
             </tr>
          </thead>
          <tbody>
@@ -32,8 +30,11 @@
                 <td><%=c.createdAt.toLocaleDateString()%></td>
                 <td><%=c.userName%> </td>
                 <td><%=c.text%> </td>
-                <td><%=c.userId%> </td>
-                <td><%=user._id%> </td>
+                <% if (c.userId.equals(user && user._id)) { %> 
+                  <td id="edit-comment-button">
+                     <a href="/partners/<%=partner.id%>/comments/<%=c.id%>/edit">edit</a>
+                  </td>
+                  <% } %>
                 <% if (c.userId.equals(user && user._id)) { %>
                    <td>
                      <form action="/partners/<%=partner.id%>/comments/<%=c._id%>?_method=DELETE" method="POST">
@@ -49,7 +50,7 @@
    <% } else { %> 
       <h5>No comments yet. Please add below.</h5>
    <% } %>
-   
+   <br>
    <div id="partner-comment-form">
       <form id="add-partner-comment" method="POST" action="/partners/<%=partner._id%>/comments">
          <textarea name="text"></textarea><br>
