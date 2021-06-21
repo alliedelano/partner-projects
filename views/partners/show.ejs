@@ -34,7 +34,7 @@
                 <td><%=c.text%> </td>
                 <td><%=c.userId%> </td>
                 <td><%=user._id%> </td>
-                <% if (c.userId != user._id) { %>
+                <% if (c.userId.equals(user && user._id)) { %>
                    <td>
                      <form action="/partners/<%=partner.id%>/comments/<%=c._id%>?_method=DELETE" method="POST">
                         <button type="submit">Delete</button>
