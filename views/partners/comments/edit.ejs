@@ -1,8 +1,8 @@
-<%- include('../partials/header') %>
+<h1> Insert partial header</h1>
 
-<form action="/comments/<%=comment._id%>?_method=PUT" method="POST">
-    <input name="text" value="<%=comment.text%>">
+<form action="/partners/<%=partner.id%>/comments/<%=commentSubdoc.id%>?_method=PUT" method="POST">
+    <input name="text" value="<%=commentSubdoc.text%>">
     <button type="submit">Update Comment</button>
 </form>
 
-<%- include('../partials/footer') %>
+<h1> Insert partial footer</h1>
