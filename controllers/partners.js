@@ -21,10 +21,13 @@ async function update(req, res){
 }
 
 function index(req, res){
-    Partner.find({}, function(err, partners) {
+    let sortKey = req.query.sort || 'orgName';
+    Partner.find({}).sort(sortKey).exec(function(err, partners) {
+        if (err) return next(err);
         res.render('partners/index', {
             title: 'All Partners',
-            partners
+            partners,
+            sortKey
         })
     })
 }
