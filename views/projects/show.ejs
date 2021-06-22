@@ -16,7 +16,61 @@
    <section>
       <a href="/projects/<%=project.id%>/edit">Edit Project</a>
    </section>
+   <br>
+   <% if (project.comments.length) { %>
+      <table>
+         <thead>
+            <tr>
+               <th>Timestamp</th>
+               <th>Team Member</th>
+               <th>Comment</th>
+            </tr>
+         </thead>
+         <tbody>
+            <% project.comments.sort((a, b) => (b.updatedAt > a.updatedAt) ? 1: -1).forEach(c => { %>
+               <tr>
+                  <td><%=c.updatedAt.toLocaleDateString()%></td>
+                  <td><%=c.userName%></td>
+                  <td><%=c.text%></td>
+                  <% if (c.userId.equals(user && user._id)) { %>
+                     <td>
+                        <form id="edit-comment-button" action="/projects/<%=project.id%>/comments/<%=c.id%>/edit" method="GET">
+                           <button type="submit">Edit</button>
+                        </form>
+                     </td>
+                  <% } %> 
+                  <% if (c.userId.equals(user && user._id)) { %>
+                     <td>
+                       <form action="/projects/<%=project.id%>/comments/<%=c._id%>?_method=DELETE" method="POST">
+                          <button type="submit">Delete</button>
+                       </form>
+                    </td>
+                  <% } %>
+               </tr>
+            }) %> 
+         </tbody>
+      </table>
+   <% } else { %> 
+      <h5>No comments yet. Please add below.</h5>
+   <% } %>
 
-   <div id="comment-form">Comment Form</div>
+   <div id="project-comment-form">
+      <form id="add-project-comment" method="POST" action="/projects/<%=project._id%>/comments">
+         <textarea name="text" placeholder="Enter a status update, comment, or other thought here."></textarea>
+         <br>
+         <button id="add-comment" type="submit">Add Comment</button>
+      </form>
+   </div>
+   <br>
+   <br>
+   <br>
+
+   <div>Record Created By: <%=project.userName%> </div>
+   <section id="delete">
+      <form action="/projects/<%=project.id%>/?_method=DELETE" class="delete-form" method="POST">
+         <button id="delete-project" type="submit">Delete Project</button><br>
+         <label>Warning: This action cannot be undone.</label>
+      </form>
+   </section>
 
 <%- include('../partials/footer') %>

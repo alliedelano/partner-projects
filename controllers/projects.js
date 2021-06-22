@@ -5,7 +5,9 @@ const User = require('../models/user');
 module.exports = {
     index,
     show,
-    create
+    create,
+    edit,
+    update
 }
 
 function index(req, res){
@@ -30,6 +32,27 @@ function show(req, res){
             }
         )
     })
+}
+
+function edit(req, res){
+    Project.findById(req.params.id, function(err, project){
+        if(err){
+            res.send(err);
+        } else {
+            res.render('projects/edit', {
+                project: project
+            })
+        }
+    })
+}
+
+async function update(req, res){
+    try {
+        const updatedProject = await Project.findByIdAndUpdate(req.params.id, req.body, {new: true});
+        res.redirect(`/projects/${req.params.id}`)
+    } catch (err) {
+        res.send(err)
+    }
 }
 
 function create(req, res){

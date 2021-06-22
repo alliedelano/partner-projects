@@ -95,12 +95,12 @@ tr:hover {
   flex-direction: column;
 }
 
-#edit-partner-form {
+#edit-partner-form, #edit-project-form {
   display: flex;
   flex-direction: column;
 }
 
-#edit-partner-form *, #add-partner-form *, #add-project-form * {
+#edit-partner-form *, #add-partner-form *, #add-project-form *, #edit-project-form * {
   margin: 2px auto 2px auto;
 }
 

@@ -28,9 +28,9 @@
          <tbody>
             <% partner.comments.sort((a, b) => (b.updatedAt > a.updatedAt) ? 1: -1).forEach(c => { %>
              <tr>
-                <td><%=c.createdAt.toLocaleDateString()%></td>
-                <td><%=c.userName%> </td>
-                <td><%=c.text%> </td>
+                <td><%=c.updatedAt.toLocaleDateString()%></td>
+                <td><%=c.userName%></td>
+                <td><%=c.text%></td>
                 <% if (c.userId.equals(user && user._id)) { %> 
                   <td>
                      <form id="edit-comment-button" action="/partners/<%=partner.id%>/comments/<%=c.id%>/edit" method="GET">

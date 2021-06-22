@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
     <h1>Edit Project Information</h1>
-    <form id="edit-project-form" action="/partners/<%=project.id%>?_method=PUT" method="POST">
+    <form id="edit-project-form" action="/projects/<%=project.id%>?_method=PUT" method="POST">
         <label>Project Name:
             <input type="text" name="projectName" value="<%=project.projectName%>">
          </label>
@@ -53,7 +53,7 @@
          <label>Contract in Place:
             <input type="checkbox" name="contractInPlace" value="<%=project.contractInPlace%>">
          </label>
-         <button id="submit-form" type="submit">Add Project</button>
+         <button id="submit-form" type="submit">Update</button>
     </form>
 
 <%- include('../partials/footer') %>

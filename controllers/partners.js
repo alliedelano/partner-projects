@@ -64,7 +64,7 @@ function edit(req, res){
                 partner: partner
             })
         }
-    });
+    })
 }
 
 function deletePartner(req, res){
