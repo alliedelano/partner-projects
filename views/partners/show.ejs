@@ -26,14 +26,16 @@
             </tr>
          </thead>
          <tbody>
-            <% partner.comments.forEach(c => { %>
+            <% partner.comments.sort((a, b) => (b.updatedAt > a.updatedAt) ? 1: -1).forEach(c => { %>
              <tr>
                 <td><%=c.createdAt.toLocaleDateString()%></td>
                 <td><%=c.userName%> </td>
                 <td><%=c.text%> </td>
                 <% if (c.userId.equals(user && user._id)) { %> 
-                  <td id="edit-comment-button">
-                     <a href="/partners/<%=partner.id%>/comments/<%=c.id%>/edit">edit</a>
+                  <td>
+                     <form id="edit-comment-button" action="/partners/<%=partner.id%>/comments/<%=c.id%>/edit" method="GET">
+                        <button type="submit">Edit</button>
+                     </form>
                   </td>
                   <% } %>
                 <% if (c.userId.equals(user && user._id)) { %>

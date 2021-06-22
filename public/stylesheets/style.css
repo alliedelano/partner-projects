@@ -90,7 +90,7 @@ tr:hover {
   background-color: #DFE0E2
 }
 
-#add-partner-form {
+#add-partner-form, #add-project-form {
   display: flex;
   flex-direction: column;
 }
@@ -100,13 +100,12 @@ tr:hover {
   flex-direction: column;
 }
 
-#edit-partner-form *, #add-partner-form * {
+#edit-partner-form *, #add-partner-form *, #add-project-form * {
   margin: 2px auto 2px auto;
 }
 
 #edit-comment-button {
   background-color: yellow;
-  border: solid 1px black;
 }
 
 #submit-form, #add-comment, #delete-partner {
@@ -124,6 +123,7 @@ tr:hover {
 #add-partner-comment > textarea {
   width: 60%;
   height: 10vh;
+  font-family: 'Raleway', sans-serif;
 }
 
 #submit-form:hover, #add-comment:hover, #delete-partner:hover {
