@@ -23,16 +23,16 @@
        <h3>Add New Partner</h3>
        <form id="add-partner-form" action="/partners" method="POST">
            <label>Organization Name:
-               <input type="text" name="orgName">
+               <input type="text" name="orgName" placeholder="Please enter organization name">
             </label>
            <label>Website:
-                <input type="text" name="website">
+                <input type="text" name="website" placeholder="Please enter a website">
            </label>
            <label>Description:
-                <input type="text" name="description">
+                <input type="text" name="description" id="description-input" placeholder="Please describe the organization">
            </label>
            <label>Location:
-                <input type="text" name="location">
+                <input type="text" name="location" placeholder="Where is this organization located?">
            </label>
            <label>Partner Type:
                 <select name="type">
@@ -52,10 +52,10 @@
                 </select>
            </label>
            <label>Primary Contact Name:
-                <input type="text" name="contactName">
+                <input type="text" name="contactName" placeholder="Please enter first and last name">
            </label>
            <label>Primary Contact Email:
-                <input type="text" name="contactEmail">
+                <input type="text" name="contactEmail" placeholder="Please enter a valid email address">
            </label>
            <label>Lead Team Member:
            <select name="leadTeamMember">
