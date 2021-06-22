@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const projectCommentSchema = new Schema({
     text: String,
-    userId: [{type: Schema.Types.ObjectId, ref: 'User'}],
+    userId: {type: Schema.Types.ObjectId, ref: 'User'},
     userName: {
         type: String
     }
@@ -24,7 +24,7 @@ const projectSchema = new Schema({
         type: String,
         enum: ['xs', 's', 'm', 'l', 'xl']
     },
-    partner: [{type: Schema.Types.ObjectId, ref: 'Partner'}],
+    partner: {type: Schema.Types.ObjectId, ref: 'Partner'},
     leadTeamMember: {
         type: String,
         enum: ['Cherakee', 'Helen', 'Laura', 'Olly']

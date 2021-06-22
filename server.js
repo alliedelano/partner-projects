@@ -22,8 +22,8 @@ const indexRouter = require('./routes/index');
 const dashboardRouter = require('./routes/dashboard');
 const partnersRouter = require('./routes/partners');
 const projectsRouter = require('./routes/projects');
-const partnerCommentsRouter = require('./routes/partnerComments')
-
+const partnerCommentsRouter = require('./routes/partnerComments');
+const projectCommentsRouter = require('./routes/projectComments');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -58,6 +58,7 @@ app.use('/dashboard', dashboardRouter);
 app.use('/partners', partnersRouter);
 app.use('/projects', projectsRouter);
 app.use('/', partnerCommentsRouter);
+app.use('/', projectCommentsRouter);
 
 
 // invalid request, send 404 page
