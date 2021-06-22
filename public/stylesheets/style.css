@@ -58,6 +58,15 @@ a:hover {
   background-color: #4CBED3;
 }
 
+#home-image {
+  height: 400px;
+}
+
+#welcome-login {
+  display: flex;
+  justify-content: center;
+}
+
 #header-line {
   background-color: #DFE0E2;
   height: 1vh;

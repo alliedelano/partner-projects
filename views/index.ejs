@@ -1,5 +1,25 @@
 <%- include('./partials/header') %>
 
-   <h1>Welcome message! Please log in to continue.</h1> 
+   <h1>Welcome!</h1>
+
+   <div>
+      <h2>Super awesome image. REPLACE</h2>
+      <img id="home-image" src="/images/placeholder.png" alt="">
+   </div>
+
+
+
+   <h1>Please log in to continue.</h1> 
+   <section id="welcome-login">
+      <div id="login-out">
+         <h2>
+             <% if (user) { %>
+                 <a href="/logout" id="logout">Log Out</a>
+             <% } else { %> 
+                 <a href="/auth/google" id="login">Log In</a>
+             <% } %>
+         </h2>
+     </div>
+   </section>
 
 <%- include('./partials/footer') %>
