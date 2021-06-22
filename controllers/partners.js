@@ -72,18 +72,3 @@ function deletePartner(req, res){
         res.redirect('/partners')
     })
 }
-
-
-
-
-
-
-// function index(req, res) {
-//     let sortKey = req.query.sort || 'orgName';
-//     Partner.find({}).sort(sortKey).exec(function(err, partners){
-//         if (err) return next(err);
-//         res.render('partners/index'), {
-//             partners
-//         }
-//     })
-// }
