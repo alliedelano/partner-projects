@@ -4,6 +4,7 @@ const User = require('../models/user');
 
 module.exports = {
     index,
+    show,
     create
 }
 
@@ -13,6 +14,21 @@ function index(req, res){
             title: 'All Projects',
             projects
         })
+    })
+}
+
+function show(req, res){
+    Project.findById(req.params.id, function(err, project){
+        User.find(
+            {userName: user.name},
+            function(err, users){
+                res.render('projects/show', {
+                    title: 'Project Detail',
+                    project: project,
+                    users: users
+                })
+            }
+        )
     })
 }
 

@@ -32,7 +32,7 @@ function index(req, res){
 function show (req, res){
     Partner.findById(req.params.id, function (err, partner){
         User.find(
-            {enteredBy: user.name},
+            {userName: user.name},
             function(err, users){
                 res.render('partners/show', {
                     title: 'Partner Detail',

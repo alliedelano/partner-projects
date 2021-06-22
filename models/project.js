@@ -25,7 +25,10 @@ const projectSchema = new Schema({
         enum: ['xs', 's', 'm', 'l', 'xl']
     },
     partner: [{type: Schema.Types.ObjectId, ref: 'Partner'}],
-    teamMembers: [{type: Schema.Types.ObjectId, ref: 'User'}],
+    leadTeamMember: {
+        type: String,
+        enum: ['Cherakee', 'Helen', 'Laura', 'Olly']
+    },
     startDate: {
         type: Date
     },

@@ -1,6 +1,21 @@
 <%- include('../partials/header') %>
 
-   <h1>Project Show Page</h1> 
+   <section id="show-page-projects">
+      <h1><%=project.projectName%></h1>
+      <div>Type: <%=project.type%></div>
+      <div>Description: <%=project.description%></div>
+      <div>Size: <%=project.size%></div>
+      <div>Start Date: <%=project.startDate%></div>
+      <div>End Date: <%=project.endDate%></div>
+      <div>Partner: ADD THIS FUNCTIONALITY</div>
+      <div>Lead Team Member: <%=project.leadTeamMember%></div>
+      <div>Contract Necessary: <%=project.contractNecessary%></div>
+      <div>Contract In Place: <%=project.contractInPlace%></div>
+   </section> 
+   <br>
+   <section>
+      <a href="/projects/<%=project.id%>/edit">Edit Project</a>
+   </section>
 
    <div id="comment-form">Comment Form</div>
 

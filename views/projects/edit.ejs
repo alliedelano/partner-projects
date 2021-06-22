@@ -1,36 +1,12 @@
 <%- include('../partials/header') %>
 
-   <h1>Edge Future Learning Projects</h1>
-   <table id="project-list">
-      <thead>
-         <th>Project Name</th>
-         <th>Project Type</th>
-         <th>In Partnership With</th>
-         <th>Starts/Ends</th>
-         <th>Size</th>
-      </thead>
-      <tbody>
-         <% projects.forEach(p => { %>
-            <tr>
-               <td><a href="projects/<%=p.id%>"><%=p.projectName%></a></td>
-               <td><%=p.type%></td>
-               <td>Make this partner name</td>
-               <td><%=p.startDate, p.endDate%></td>
-               <td><%=p.size%></td>
-            </tr>
-         <% }) %> 
-      </tbody>
-   </table>
-   <br><br><br>
-
-   <div id="new-entry-project">
-      <h3>Add New Project</h3>
-      <form id="add-project-form" action="/projects" method="POST">
-         <label>Project Name:
-            <input type="text" name="projectName">
+    <h1>Edit Project Information</h1>
+    <form id="edit-project-form" action="/partners/<%=project.id%>?_method=PUT" method="POST">
+        <label>Project Name:
+            <input type="text" name="projectName" value="<%=project.projectName%>">
          </label>
          <label>Type:
-            <select name="type">
+            <select name="type" value="<%=project.type%> ">
                <option value="Blog">Blog</option>
                <option value="Case Study">Case Study</option>
                <option value="Webinar">Webinar</option>
@@ -44,10 +20,10 @@
             </select>
          </label>
          <label>Description:
-            <input type="text" name="description">
+            <input type="text" name="description" value="<%=project.description%>">
          </label>
          <label>Size:
-            <select name="size">
+            <select name="size" value="<%=project.size%> ">
                <option value="xs">Extra Small</option>
                <option value="s">Small</option>
                <option value="m">Medium</option>
@@ -56,15 +32,15 @@
             </select>
          </label>
          <label>Start Date:
-            <input type="date" name="startDate">
+            <input type="date" name="startDate" value="<%=project.startDate%>">
          </label>
          <label>End Date:
-            <input type="date" name="endDate">
+            <input type="date" name="endDate" value="<%=project.endDate%>">
          </label>
          <label>Partner: (ADD THIS FUNCTIONALITY)
          </label>
          <label>Lead Team Member:
-            <select name="leadTeamMember">
+            <select name="leadTeamMember" value="<%=project.leadTeamMember%>">
                  <option value="Cherakee">Cherakee</option>
                  <option value="Helen">Helen</option>
                  <option value="Laura">Laura</option>
@@ -72,14 +48,12 @@
             </select>
          </label>
          <label>Contract Necessary:
-            <input type="checkbox" name="contractNecessary">
+            <input type="checkbox" name="contractNecessary" value="<%=project.contractNecessary%>">
          </label>
          <label>Contract in Place:
-            <input type="checkbox" name="contractInPlace">
+            <input type="checkbox" name="contractInPlace" value="<%=project.contractInPlace%>">
          </label>
          <button id="submit-form" type="submit">Add Project</button>
-      </form>
-   </div>
-
+    </form>
 
 <%- include('../partials/footer') %>
