@@ -6,6 +6,9 @@ const partnerCommentSchema = new Schema({
     userId: {type: Schema.Types.ObjectId, ref: 'User'},
     userName: {
         type: String
+    },
+    userAvatar: {
+        type: String
     }
 }, {
     timestamps: true

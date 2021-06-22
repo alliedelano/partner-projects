@@ -48,6 +48,7 @@ function create(req, res) {
     Partner.findById(req.params.id, function(err, partner){
         req.body.userId = req.user._id;
         req.body.userName = req.user.name;
+        req.body.userAvatar = req.user.avatar;
         partner.comments.push(req.body);
         partner.save(function(err){
         res.redirect(`/partners/${partner._id}`);

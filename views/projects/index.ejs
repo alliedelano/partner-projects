@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 
    <h1>Edge Future Learning Projects</h1>
+   <section class="table-display">
    <table id="project-list">
       <thead>
          <th>Project Name</th>
@@ -21,6 +22,7 @@
          <% }) %> 
       </tbody>
    </table>
+   </section>
    <br><br><br>
 
    <div id="new-entry-project">
@@ -63,7 +65,7 @@
          </label>
          <label>Partner:
             <select name="partner">
-               <% partners.forEach(p => { %>
+               <% partners.sort().forEach(p => { %>
                   <option value="<%=p._id%>"><%=p.orgName%> </option>
                <% }) %> 
             </select>

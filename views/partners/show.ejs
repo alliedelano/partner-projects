@@ -29,7 +29,10 @@
             <% partner.comments.sort((a, b) => (b.updatedAt > a.updatedAt) ? 1: -1).forEach(c => { %>
              <tr>
                 <td><%=c.updatedAt.toLocaleDateString()%></td>
-                <td><%=c.userName%></td>
+                <td><% if (c.userAvatar) { %> 
+                  <img src="<%= c.userAvatar %>" alt="avatar">
+                  <% } %>
+                   <%=c.userName%></td>
                 <td><%=c.text%></td>
                 <% if (c.userId.equals(user && user._id)) { %> 
                   <td>

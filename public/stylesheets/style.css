@@ -76,6 +76,11 @@ input[type="text"], select {
   font-family: 'Raleway', sans-serif;
 }
 
+.table-display {
+  display: flex;
+  justify-content: center;
+}
+
 table {
   font-size: 15px;
 }

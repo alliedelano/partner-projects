@@ -13,8 +13,10 @@
         <input name="sort" type="radio" id="sort-status" value="status"
          <%= sortKey === 'status' ? 'checked' : '' %> >Sort by Status
     </label>
+    <br><br><br>
    
-   <table id="partner-list">
+    <section class="table-display">
+    <table id="partner-list">
        <thead>
            <th>Organization Name</th>
            <th>Partner Type</th>
@@ -29,23 +31,24 @@
             </tr>
            <% }) %>
        </tbody>
-   </table>
+    </table>
+    </section>
    <br><br><br>
 
    <div id="new-entry-partner">
        <h3>Add New Partner</h3>
        <form id="add-partner-form" action="/partners" method="POST">
            <label>Organization Name:
-               <input type="text" name="orgName" placeholder="Please enter organization name">
+               <input type="text" name="orgName" placeholder="name">
             </label>
            <label>Website:
-                <input type="text" name="website" placeholder="Please enter a website">
+                <input type="text" name="website" placeholder="website">
            </label>
            <label>Description:
-                <input type="text" name="description" id="description-input" placeholder="Please describe the organization">
+                <input type="text" name="description" id="description-input" placeholder="description">
            </label>
            <label>Location:
-                <input type="text" name="location" placeholder="Where is this organization located?">
+                <input type="text" name="location" placeholder="location">
            </label>
            <label>Partner Type:
                 <select name="type">
@@ -65,10 +68,10 @@
                 </select>
            </label>
            <label>Primary Contact Name:
-                <input type="text" name="contactName" placeholder="Please enter first and last name">
+                <input type="text" name="contactName" placeholder="first and last name">
            </label>
            <label>Primary Contact Email:
-                <input type="text" name="contactEmail" placeholder="Please enter a valid email address">
+                <input type="text" name="contactEmail" placeholder="email address">
            </label>
            <label>Lead Team Member:
            <select name="leadTeamMember">
