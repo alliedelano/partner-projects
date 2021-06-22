@@ -7,7 +7,14 @@ module.exports = {
     show,
     create,
     edit,
-    update
+    update,
+    delete: deleteProject
+}
+
+function deleteProject(req, res){
+    Project.findByIdAndRemove(req.params.id, (err, deleteProject) => {
+        res.redirect('/projects')
+    })
 }
 
 function index(req, res){
