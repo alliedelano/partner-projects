@@ -20,9 +20,12 @@ function deleteProject(req, res){
 
 function index(req, res){
     Project.find({}, function(err, projects){
-        res.render('projects/index', {
-            title: 'All Projects',
-            projects
+        Partner.find({}, function(err, partners){
+            res.render('projects/index', {
+                title: 'All Projects',
+                projects,
+                partners
+            })
         })
     })
 }
@@ -64,12 +67,15 @@ async function update(req, res){
 }
 
 function create(req, res){
-    User.find({}, function(err, users){
-        req.body.userId = req.user._id;
-        req.body.userName = req.user.name;
-        const project = new Project(req.body, users);
-        project.save(function(err){
-            res.redirect ('/projects');
+    Partner.find({}, function(err, partners){
+        req.body.partner = req.partner._id
+        User.find({}, function(err, users){
+            req.body.userId = req.user._id;
+            req.body.userName = req.user.name;
+            const project = new Project(req.body, users, partners);
+            project.save(function(err){
+                res.redirect ('/projects');
+            })
         })
     })
 }

@@ -61,7 +61,12 @@
          <label>End Date:
             <input type="date" name="endDate">
          </label>
-         <label>Partner: (ADD THIS FUNCTIONALITY)
+         <label>Partner:
+            <select name="partner">
+               <% partners.forEach(p => { %>
+                  <option value="<%=p._id%>"><%=p.orgName%> </option>
+               <% }) %> 
+            </select>
          </label>
          <label>Lead Team Member:
             <select name="leadTeamMember">

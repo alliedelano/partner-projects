@@ -44,7 +44,7 @@ const projectSchema = new Schema({
     contractInPlace: {
         type: Boolean
     },
-    userId: [{type: Schema.Types.ObjectId, ref: 'User'}],
+    userId: {type: Schema.Types.ObjectId, ref: 'User'},
     userName: {
         type: String
     },
