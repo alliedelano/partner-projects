@@ -105,10 +105,6 @@ th, td {
   vertical-align: center;
 }
 
-tr:hover {
-  background-color: #DFE0E2
-}
-
 #add-partner-form, #add-project-form {
   display: flex;
   flex-direction: column;
@@ -123,11 +119,7 @@ tr:hover {
   margin: 2px auto 2px auto;
 }
 
-#edit-comment-button {
-  background-color: yellow;
-}
-
-#submit-form, #add-comment, #delete-partner {
+#submit-form, #add-comment, #delete-partner, #delete-project {
   margin: 15px auto 15px auto;
   height: 30px;
   width: 150px;
@@ -138,16 +130,42 @@ tr:hover {
   border: none;
   font-family: 'Raleway', sans-serif;
 }
+#partner-comment-table, #project-comment-table {
+  align-self: center;
+  border: black solid 2px;
+  margin: auto 10vw auto 10vw
+}
 
-#add-partner-comment > textarea {
+#add-partner-comment > textarea, #add-project-comment > textarea {
   width: 60%;
   height: 10vh;
   font-family: 'Raleway', sans-serif;
 }
 
-#submit-form:hover, #add-comment:hover, #delete-partner:hover {
+#submit-form:hover, #add-comment:hover, #delete-partner:hover, #delete-project:hover {
   background-color: #BF2885;
   cursor: pointer;
+}
+
+#edit-comment, #delete-comment {
+  font-family: 'Raleway', sans-serif; 
+  background-color: #152943;
+  color: white;
+
+}
+
+#edit-comment:hover {
+  background-color: #57EC78;
+  color: black;
+}
+
+#delete-comment:hover {
+  background-color: #FF9898;
+  color: black;
+}
+
+#edit-comment {
+  background-color: 
 }
 
 body {

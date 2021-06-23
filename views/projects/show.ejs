@@ -11,10 +11,19 @@
       <div>Lead Team Member: <%=project.leadTeamMember%></div>
    </section> 
    <br>
-   <section>
+   <section id="edit-document">
       <a href="/projects/<%=project.id%>/edit">Edit Project</a>
    </section>
    <br>
+   <div id="project-comment-form">
+      <form id="add-project-comment" method="POST" action="/projects/<%=project._id%>/comments">
+         <textarea name="text" placeholder="Enter a status update, comment, or other thought here."></textarea>
+         <br>
+         <button id="add-comment" type="submit">Add Comment</button>
+      </form>
+   </div>
+   <br>
+   <section id="project-comment-table">
    <% if (project.comments.length) { %>
       <table>
          <thead>
@@ -33,14 +42,14 @@
                   <% if (c.userId.equals(user && user._id)) { %>
                      <td>
                         <form id="edit-comment-button" action="/projects/<%=project.id%>/comments/<%=c.id%>/edit" method="GET">
-                           <button type="submit">Edit</button>
+                           <button id="edit-comment" type="submit">Edit</button>
                         </form>
                      </td>
                   <% } %> 
                   <% if (c.userId.equals(user && user._id)) { %>
                      <td>
                        <form action="/projects/<%=project.id%>/comments/<%=c._id%>?_method=DELETE" method="POST">
-                          <button type="submit">Delete</button>
+                          <button id="delete-comment" type="submit">Delete</button>
                        </form>
                     </td>
                   <% } %>
@@ -51,14 +60,7 @@
    <% } else { %> 
       <h5>No comments yet. Please add below.</h5>
    <% } %>
-
-   <div id="project-comment-form">
-      <form id="add-project-comment" method="POST" action="/projects/<%=project._id%>/comments">
-         <textarea name="text" placeholder="Enter a status update, comment, or other thought here."></textarea>
-         <br>
-         <button id="add-comment" type="submit">Add Comment</button>
-      </form>
-   </div>
+   </section>
    <br>
    <br>
    <br>
