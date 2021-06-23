@@ -30,12 +30,12 @@ const partnerSchema = new Schema({
     },
     type: {
         type: String,
-        enum: ['Peer', 'Customer', 'Technology', 'Collaborator/Contributor']
+        enum: ['Wider Contact', 'Peer', 'Customer', 'Technology', 'Collaborator/Contributor']
     },
     status: {
         type: String,
-        enum: ['Wider Contact', 'Exploring Relationship', 'Working Together', 'EFL Leader', 'EFL Partner'],
-        default: 'Wider Contact'
+        enum: ['Exploring Relationship', 'Working Together', 'EFL Leader', 'EFL Partner'],
+        default: 'Exploring Relationship'
     },
     contactName: {
         type: String,

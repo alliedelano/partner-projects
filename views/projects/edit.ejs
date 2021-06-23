@@ -37,7 +37,12 @@
          <label>End Date:
             <input type="date" name="endDate" value="<%=project.endDate%>">
          </label>
-         <label>Partner: (ADD THIS FUNCTIONALITY)
+         <label>Partner:
+            <select name="partner" value="<%=project.partner%> ">
+               <% partners.sort().forEach(p => { %>
+                  <option value="<%=p._id%>"><%=p.orgName%> </option>
+               <% }) %> 
+            </select>
          </label>
          <label>Lead Team Member:
             <select name="leadTeamMember" value="<%=project.leadTeamMember%>">
@@ -46,12 +51,6 @@
                  <option value="Laura">Laura</option>
                  <option value="Olly">Olly</option>
             </select>
-         </label>
-         <label>Contract Necessary:
-            <input type="checkbox" name="contractNecessary" value="<%=project.contractNecessary%>">
-         </label>
-         <label>Contract in Place:
-            <input type="checkbox" name="contractInPlace" value="<%=project.contractInPlace%>">
          </label>
          <button id="submit-form" type="submit">Update</button>
     </form>

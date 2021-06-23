@@ -51,18 +51,25 @@ function show(req, res){
 
 function edit(req, res){
     Project.findById(req.params.id, function(err, project){
-        if(err){
-            res.send(err);
-        } else {
-            res.render('projects/edit', {
-                project: project
-            })
-        }
+        Partner.find({}, function(err, partners){
+            if(err){
+                res.send(err);
+            } else {
+                res.render('projects/edit', {
+                    project: project,
+                    partners: partners
+                })
+            }
+        })
     })
 }
 
 async function update(req, res){
     try {
+        const startDate = req.body.startDate;
+        req.body.startDate = `${startDate.substr(5, 2)}-${startDate.substr(8, 2)}-${startDate.substr(0, 4)}`;
+        const endDate = req.body.endDate;
+        req.body.endDate = `${endDate.substr(5, 2)}-${endDate.substr(8, 2)}-${endDate.substr(0, 4)}`;
         const updatedProject = await Project.findByIdAndUpdate(req.params.id, req.body, {new: true});
         res.redirect(`/projects/${req.params.id}`)
     } catch (err) {
