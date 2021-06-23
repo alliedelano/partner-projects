@@ -1,5 +1,30 @@
 <%- include('../partials/header') %>
 
-   <h1 id="dashboard">DASHBOARD</h1> 
-
+   <h2>Edge Future Learning</h2>
+   <h1>Partners & Projects Dashboard</h1> 
+   <p>Welcome, Team! We've made a lot of connections and are working on important things! Here's some overall info about our partners and projects.</p>
+   <section id="dashboard">
+      <div id="partners-dashboard">Partners:
+         <h3>Total Partnership Contacts</h3>
+         <% let total = 0 %> 
+         <% partners.forEach(element => { %>
+            <% total += 1 %> 
+         <% }) %> 
+         <p class="total"><%=total%></p>
+         <h3>Totals by Type?</h3>
+         <h2><a href="/partners">Go to All Partners</a></h2>
+      </div>
+      <div id="projects-dashboard">Projects
+         <h3>Total Projects with Partners</h3>
+         <% let projTotal = 0 %>
+         <% projects.forEach(element => { %>
+            <div class="project-img"></div>
+            <% projTotal +=1 %>
+         <% }) %>
+         <p class="total"><%=projTotal%> </p>
+         <h3>Totals by Size?</h3> 
+         <h3> REPRESENTED BY SIZE??? </h3>
+         <h2><a href="/projects">Go to All Projects</a></h2>
+      </div>
+   </section>
 <%- include('../partials/footer') %>

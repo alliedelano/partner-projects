@@ -76,8 +76,13 @@ a:hover {
 
 #dashboard {
   background-color: pink;
-  height: 40vh;
-  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.total {
+  font-size: 50px;
 }
 
 input[type="text"], select {
