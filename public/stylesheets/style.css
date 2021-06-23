@@ -119,6 +119,11 @@ a:hover {
   margin: 15px;
 }
 
+.title {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .key {
   font-weight: bold;
   color: #4CBED3; 
