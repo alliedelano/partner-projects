@@ -105,6 +105,12 @@ a:hover {
   border-radius: 50%;
 }
 
+.go-to-all-button {
+  border: solid 3px #BF2885;
+  width: 300px;
+  border-radius: 8px;
+}
+
 .projects-header, .partners-header {
   width: 150px;
   font-size: 15px;
