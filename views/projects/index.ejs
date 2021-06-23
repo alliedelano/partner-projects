@@ -7,7 +7,6 @@
          <th>Project Name</th>
          <th>Project Type</th>
          <th>In Partnership With</th>
-         <th>Starts/Ends</th>
          <th>Size</th>
       </thead>
       <tbody>
@@ -17,10 +16,9 @@
                <td><%=p.type%></td>
                <% partners.forEach(partner => { %>
                   <% if (p.partner = partner._id) { %>
-                     <td><%=partner.orgName%> </td>
+                     <td><%=partner.orgName%></td>
                   <% } %>
                <% }) %>
-               <td><%=p.startDate, p.endDate%></td>
                <td><%=p.size%></td>
             </tr>
          <% }) %> 
@@ -81,12 +79,6 @@
                  <option value="Laura">Laura</option>
                  <option value="Olly">Olly</option>
             </select>
-         </label>
-         <label>Contract Necessary:
-            <input type="checkbox" name="contractNecessary">
-         </label>
-         <label>Contract in Place:
-            <input type="checkbox" name="contractInPlace">
          </label>
          <button id="submit-form" type="submit">Add Project</button>
       </form>
