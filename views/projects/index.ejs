@@ -15,7 +15,11 @@
             <tr>
                <td><a href="projects/<%=p.id%>"><%=p.projectName%></a></td>
                <td><%=p.type%></td>
-               <td>Make this partner name</td>
+               <% partners.forEach(partner => { %>
+                  <% if (p.partner = partner._id) { %>
+                     <td><%=partner.orgName%> </td>
+                  <% } %>
+               <% }) %>
                <td><%=p.startDate, p.endDate%></td>
                <td><%=p.size%></td>
             </tr>

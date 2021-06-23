@@ -35,10 +35,14 @@ function show(req, res){
         User.find(
             {userName: user.name},
             function(err, users){
-                res.render('projects/show', {
-                    title: 'Project Detail',
-                    project: project,
-                    users: users
+                Partner.findById(project.partner, function(err, partner){
+                    res.render('projects/show', {
+                        title: 'Project Detail',
+                        project: project,
+                        users: users,
+                        partner: partner
+                    })
+
                 })
             }
         )
@@ -68,10 +72,13 @@ async function update(req, res){
 
 function create(req, res){
     Partner.find({}, function(err, partners){
-        req.body.partner = req.partner._id
         User.find({}, function(err, users){
             req.body.userId = req.user._id;
             req.body.userName = req.user.name;
+            const startDate = req.body.startDate;
+            req.body.startDate = `${startDate.substr(5, 2)}-${startDate.substr(8, 2)}-${startDate.substr(0, 4)}`;
+            const endDate = req.body.endDate;
+            req.body.endDate = `${endDate.substr(5, 2)}-${endDate.substr(8, 2)}-${endDate.substr(0, 4)}`;
             const project = new Project(req.body, users, partners);
             project.save(function(err){
                 res.redirect ('/projects');
