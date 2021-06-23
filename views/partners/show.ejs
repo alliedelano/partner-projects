@@ -1,15 +1,17 @@
 <%- include('../partials/header') %>
- 
+   <section class="partners-header">
+      <h3>EFL Partners</h3>
+   </section>   
    <section id="show-page-partners">
       <h1><%=partner.orgName%></h1>
-      <div>Website: <%=partner.website%> </div>
-      <div>Description: <%=partner.description%></div>
-      <div>Location: <%=partner.location%> </div>
-      <div>Partner Type: <%=partner.type%> </div>
-      <div>Partnership Status: <%=partner.status%> </div>
-      <div>Primary Contact Name: <%=partner.contactName%> </div>
-      <div>Contact Email: <%=partner.contactEmail%> </div>
-      <div>Lead Team Member: <%=partner.leadTeamMember%> </div>
+      <div><span class="key">Website:</span> <%=partner.website%> </div>
+      <div><span class="key">Description:</span> <%=partner.description%></div>
+      <div><span class="key">Location:</span> <%=partner.location%> </div>
+      <div><span class="key">Partner Type:</span> <%=partner.type%> </div>
+      <div><span class="key">Partnership Status:</span> <%=partner.status%> </div>
+      <div><span class="key">Primary Contact Name:</span> <%=partner.contactName%> </div>
+      <div><span class="key">Contact Email:</span> <%=partner.contactEmail%> </div>
+      <div><span class="key">Lead Team Member:</span> <%=partner.leadTeamMember%> </div>
    </section>
    <br>
    <section id="edit-document">

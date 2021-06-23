@@ -1,14 +1,16 @@
 <%- include('../partials/header') %>
-
+   <section class="projects-header">
+      <h3>EFL Projects</h3>
+   </section>
    <section id="show-page-projects">
       <h1><%=project.projectName%></h1>
-      <div>Type: <%=project.type%></div>
-      <div>Description: <%=project.description%></div>
-      <div>Size: <%=project.size%></div>
-      <div>Start Date: <%=project.startDate%></div>
-      <div>End Date: <%=project.endDate%></div>
-      <div>Partner: <%=partner.orgName%> </div>
-      <div>Lead Team Member: <%=project.leadTeamMember%></div>
+      <div><span class="key">Type:</span> <%=project.type%></div>
+      <div><span class="key">Description:</span> <%=project.description%></div>
+      <div><span class="key">Size:</span> <%=project.size%></div>
+      <div><span class="key">Start Date:</span> <%=project.startDate%></div>
+      <div><span class="key">End Date:</span> <%=project.endDate%></div>
+      <div><span class="key">Partner:</span> <%=partner.orgName%> </div>
+      <div><span class="key">Lead Team Member:</span> <%=project.leadTeamMember%></div>
    </section> 
    <br>
    <section id="edit-document">
