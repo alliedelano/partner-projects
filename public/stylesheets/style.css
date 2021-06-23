@@ -74,15 +74,35 @@ a:hover {
   margin: 1vh auto 2vh auto
 }
 
+#dashboard-header {
+  color: #BF2885;
+  margin-top: 5vh;
+}
+
+#dashboard-welcome {
+  margin: auto 10vw auto 10vw
+}
+
 #dashboard {
-  background-color: pink;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
+#projects-dashboard, #partners-dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
 .total {
   font-size: 50px;
+  background-color: #4CBED3;
+  color: white;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
 }
 
 .projects-header, .partners-header {
@@ -169,11 +189,13 @@ th, td {
 #edit-comment:hover {
   background-color: #57EC78;
   color: black;
+  cursor: pointer;
 }
 
 #delete-comment:hover {
   background-color: #FF9898;
   color: black;
+  cursor: pointer;
 }
 
 #edit-comment {
