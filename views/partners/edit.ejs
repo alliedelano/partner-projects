@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<section>
     <h1>Edit Partner Information</h1>
     <form id="edit-partner-form" action="/partners/<%=partner.id%>?_method=PUT" method="POST">
         <label>Organization Name:
@@ -47,6 +48,6 @@
           <br>
         <button id="submit-form" type="submit">Update</button>
     </form>
-
+</section>
 
 <%- include('../partials/footer') %>

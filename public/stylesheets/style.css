@@ -151,7 +151,7 @@ th, td {
   margin: 2px auto 2px auto;
 }
 
-#submit-form, #add-comment, #delete-partner, #delete-project {
+#submit-form, #add-comment, #delete-partner, #delete-project, .update-comment {
   margin: 15px auto 15px auto;
   height: 30px;
   width: 150px;
@@ -174,7 +174,7 @@ th, td {
   font-family: 'Raleway', sans-serif;
 }
 
-#submit-form:hover, #add-comment:hover, #delete-partner:hover, #delete-project:hover {
+#submit-form:hover, #add-comment:hover, #delete-partner:hover, #delete-project:hover, .update-comment:hover {
   background-color: #BF2885;
   cursor: pointer;
 }
@@ -198,8 +198,14 @@ th, td {
   cursor: pointer;
 }
 
-#edit-comment {
-  background-color: 
+.comment-edit-section {
+  margin: 10vh auto 10vh auto
+}
+
+.form-edit-comment > input {
+  width: 60%;
+  height: 10vh;
+  font-family: 'Raleway', sans-serif;
 }
 
 body {
