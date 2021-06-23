@@ -15,7 +15,7 @@
                <td><a href="projects/<%=p.id%>"><%=p.projectName%></a></td>
                <td><%=p.type%></td>
                <% partners.forEach(partner => { %>
-                  <% if (p.partner = partner._id) { %>
+                  <% if (p.partner.equals(partner._id)) { %>
                      <td><%=partner.orgName%></td>
                   <% } %>
                <% }) %>
