@@ -1,4 +1,4 @@
-![efl home](imgs/eflhomepage.png)
+![efl home](images/eflhomepage.png)
 
 # Partner & Project Management Tool
 This application is a 
