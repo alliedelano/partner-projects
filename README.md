@@ -18,6 +18,7 @@ Project Edit:
 ---
 Comments:
 ![efl comments](public/images/eflcomments.png)
+---
 
 ## Technologies Used
 * HTML/CSS/Javascript
