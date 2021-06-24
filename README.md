@@ -5,9 +5,13 @@ This application was developed for Edge Future Learning, an initiative of the Ed
 
 ## Screenshots
 ![efl dashboard](public/images/efldashboard.png) 
+---
 ![efl partner index](public/images/eflpartnerlist.png)
+---
 ![efl project show](public/images/eflprojectshow.png)
+---
 ![efl project edit](public/images/eflprojectedit.png)
+---
 ![efl comments](public/images/eflcomments.png)
 
 ## Technologies Used
