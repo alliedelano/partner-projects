@@ -19,7 +19,8 @@ function deleteProject(req, res){
 }
 
 function index(req, res){
-    Project.find({}, function(err, projects){
+    let sortKey = req.query.sort || 'projectName';
+    Project.find({}).sort(sortKey).exec(function(err, projects){
         Partner.find({}, function(err, partners){
             res.render('projects/index', {
                 title: 'All Projects',
