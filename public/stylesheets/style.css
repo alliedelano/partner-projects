@@ -177,7 +177,11 @@ th, td {
 #partner-comment-table, #project-comment-table {
   align-self: center;
   border: black solid 2px;
-  margin: auto 10vw auto 10vw
+  margin: auto 10vw auto 10vw;
+}
+
+#show-page-projects, #show-page-partners {
+  margin: auto 15vw auto 15vw;
 }
 
 #add-partner-comment > textarea, #add-project-comment > textarea {
